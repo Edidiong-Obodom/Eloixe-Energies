@@ -149,16 +149,16 @@ export default function About() {
             ].map((service) => (
               <div
                 key={randomNumber()}
-                className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col"
+                className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col min-h-[350px]"
               >
-                <div className="relative h-48">
+                <div className="h-1/2 flex-1">
                   <img
                     src={service.image ?? "/placeholder.svg"}
                     alt={service.title}
                     className="object-cover"
                   />
                 </div>
-                <div className="p-6 flex flex-col flex-grow">
+                <div className="mt-6 md:mt-1 p-6 flex-1 flex flex-col flex-grow h-1/2">
                   <h3 className="text-xl font-semibold mb-2">
                     {service.title}
                   </h3>
