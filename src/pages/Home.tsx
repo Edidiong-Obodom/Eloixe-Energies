@@ -2,6 +2,7 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { randomNumber } from "../utilities";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -129,9 +130,9 @@ export default function Home() {
                 image:
                   "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&auto=format&fit=crop&q=60",
               },
-            ].map((service, index) => (
+            ].map((service) => (
               <div
-                key={index}
+                key={randomNumber()}
                 className="group relative overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="relative h-48">
@@ -246,8 +247,11 @@ export default function Home() {
                 image:
                   "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&auto=format&fit=crop&q=60",
               },
-            ].map((testimonial, index) => (
-              <div key={index} className="p-6 bg-white rounded-xl shadow-sm">
+            ].map((testimonial) => (
+              <div
+                key={randomNumber()}
+                className="p-6 bg-white rounded-xl shadow-sm"
+              >
                 <div className="space-y-4">
                   <p className="text-gray-600">"{testimonial.text}"</p>
                   <div className="flex items-center space-x-4">

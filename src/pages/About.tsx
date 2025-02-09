@@ -1,6 +1,7 @@
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { useEffect } from "react";
+import { randomNumber } from "../utilities";
 
 export default function About() {
   useEffect(() => {
@@ -115,7 +116,7 @@ export default function About() {
       <section className="bg-gray-100 py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">Our Services</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 title: "Consultancy",
@@ -145,23 +146,25 @@ export default function About() {
                 image:
                   "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format&fit=crop&q=60",
               },
-            ].map((service, index) => (
+            ].map((service) => (
               <div
-                key={index}
-                className="bg-white rounded-lg shadow-md flex flex-col"
+                key={randomNumber()}
+                className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col"
               >
                 <div className="relative h-48">
                   <img
-                    src={service.image || "/placeholder.svg"}
+                    src={service.image ?? "/placeholder.svg"}
                     alt={service.title}
                     className="object-cover"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-4">
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-xl font-semibold mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600">{service.description}</p>
+                  <p className="text-gray-600 flex-grow">
+                    {service.description}
+                  </p>
                 </div>
               </div>
             ))}
