@@ -148,7 +148,7 @@ export default function About() {
             ].map((service, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg shadow-md overflow-hidden"
+                className="bg-white rounded-lg shadow-md overflow-auto"
               >
                 <div className="relative h-48">
                   <img
